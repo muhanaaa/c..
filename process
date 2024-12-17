@@ -1,0 +1,46 @@
+#include<stdio.h>
+//int count=0;
+//递归，非迭代，耗时
+//int fbnq(int index)
+//{
+//	if (index==3)
+//	{
+//		count++;
+//	}
+//	if(index>2)
+//	{
+//		return fbnq(index-1)+fbnq(index-2);
+//	}
+//	else
+//	{
+//		return 1;
+//	}
+//
+//}
+//迭代
+int fbnq(int n)
+{
+	
+	int a=1;
+	int b=1;
+	int c=1;
+	
+	while(n>=3)
+	{
+		c=a+b;
+		a=b;
+		b=c;
+		n--;
+	}
+	return c;
+}
+
+int main()
+{
+	int index=0;
+	scanf("%d",&index);
+	int add=fbnq(index);
+	printf("%d ",add);
+	//printf("\n%d",count);
+	return 0;
+}
